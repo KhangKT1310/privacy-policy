@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Chính Sách Quyền Riêng Tư — CamTester Pro | VigorLabs</title>
+  <meta name="description" content="Chính sách quyền riêng tư và bảo mật dữ liệu của ứng dụng CamTester Pro do VigorLabs phát triển.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --primary: #06b6d4;
+      --primary-hover: #0891b2;
+      --primary-light: rgba(6, 182, 212, 0.1);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --card-hover: #172033;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active, .lang-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      width: 100%;
+    }
+
+    .doc-hero {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .doc-meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .doc-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: #d1d5db;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.05);
+      border-left: 3px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+
+    .highlight-box.green {
+      background: rgba(16, 185, 129, 0.05);
+      border-left-color: var(--success);
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(17, 24, 39, 0.6) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-box a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      background: var(--card-bg);
+    }
+
+    .en-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="brand">
+        <img src="/logo.png" alt="CamTester Pro Logo" class="brand-logo">
+        <div>
+          <div class="brand-title">CamTester Pro</div>
+          <div class="brand-subtitle">VigorLabs Security</div>
+        </div>
+      </div>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" id="btn-vi" onclick="switchLang('vi')">Tiếng Việt</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- TIẾNG VIỆT -->
+    <div id="content-vi" class="vi-content">
+      <div class="doc-hero">
+        <div class="doc-badge">Chính Sách & Bảo Mật</div>
+        <h1>Chính Sách Quyền Riêng Tư</h1>
+        <div class="doc-meta">
+          <span>📅 Cập nhật lần cuối: 03/10/2026</span>
+          <span>🏢 Bản quyền & Phát triển: Kiều Trọng Khang (VigorLabs)</span>
+          <span>📦 Ứng dụng: CamTester Pro (com.vigorlabs.vigorcameratester)</span>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">01.</span> Giới Thiệu & Cam Kết</h2>
+        <p>
+          Chào mừng bạn đến với <strong>CamTester Pro</strong> — công cụ chuyên dụng kiểm tra, dò tìm và chẩn đoán luồng video camera IP (ONVIF / RTSP). Toàn bộ bản quyền và quyền sở hữu trí tuệ của ứng dụng thuộc về <strong>Kiều Trọng Khang</strong> (VigorLabs).
+        </p>
+        <p>
+          Chúng tôi tôn trọng và bảo vệ tuyệt đối quyền riêng tư của bạn. Chính sách này mô tả chi tiết cách thức chúng tôi xử lý thông tin khi bạn cài đặt và sử dụng ứng dụng CamTester Pro trên thiết bị Android.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">02.</span> Dữ Liệu Chúng Tôi Thu Thập & Mục Đích</h2>
+        
+        <p><strong>A. Mã Định Danh Thiết Bị (Device Identifier):</strong></p>
+        <ul>
+          <li><strong>Dữ liệu thu thập:</strong> Mã băm nhận diện phần cứng thiết bị (Device ID được băm mật mã), tên dòng máy, phiên bản hệ điều hành Android và phiên bản ứng dụng.</li>
+          <li><strong>Mục đích:</strong> Kích hoạt bản quyền dùng thử 30 ngày, xác thực giấy phép PRO và ngăn chặn hành vi gian lận tái sử dụng bản dùng thử.</li>
+          <li><strong>Phương thức truyền tải:</strong> Giao tiếp hoàn toàn qua giao thức mã hóa an toàn <code>HTTPS (TLS 1.3)</code> tới máy chủ quản lý bản quyền chính thức của chúng tôi tại <code>license.vigorlabs.org</code>.</li>
+        </ul>
+
+        <p><strong>B. Dữ Liệu Camera & Mạng Nội Bộ (100% Cục Bộ - Không Gửi Đi):</strong></p>
+        <div class="highlight-box green">
+          🔒 <strong>CAM KẾT BẢO MẬT TUYỆT ĐỐI VỀ DỮ LIỆU CAMERA:</strong><br>
+          Toàn bộ hình ảnh, luồng phát trực tiếp (Live Stream RTSP), địa chỉ IP camera, tài khoản và mật khẩu quản trị camera <strong>hoàn toàn được xử lý cục bộ (offline) trên mạng nội bộ LAN / Ethernet của bạn</strong>. Ứng dụng tuyệt đối <strong>KHÔNG</strong> lưu trữ, không ghi lại và không gửi bất kỳ hình ảnh hay mật khẩu camera nào lên bất kỳ máy chủ đám mây nào.
+        </div>
+
+        <p><strong>C. Dữ Liệu Giao Dịch Thanh Toán (Google Play Billing):</strong></p>
+        <ul>
+          <li>Các giao dịch thanh toán gói PRO (Gói 1 tháng, Gói 1 năm, Bản quyền vĩnh viễn) được xử lý trực tiếp bởi <strong>Hệ thống thanh toán của Google Play (Google Play In-App Billing)</strong>.</li>
+          <li>Chúng tôi chỉ nhận được mã Purchase Token và Order ID ẩn danh để xác thực tính hợp lệ của gói đăng ký qua Google Play Developer API. Chúng tôi <strong>không bao giờ</strong> tiếp cận hay lưu trữ số thẻ tín dụng, tài khoản ngân hàng của bạn.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">03.</span> Dịch Vụ Của Bên Thứ Ba (Third-Party Services)</h2>
+        <p>Ứng dụng có tích hợp một số dịch vụ từ đối tác thứ ba nhằm phục vụ tính năng ứng dụng:</p>
+        <ul>
+          <li><strong>Google Play Services & Billing:</strong> Quản lý cài đặt, cập nhật ứng dụng và xử lý thanh toán bản quyền an toàn.</li>
+          <li><strong>Google AdMob:</strong> Hiển thị quảng cáo biểu ngữ/xen kẽ dành riêng cho người dùng ở phiên bản Miễn phí (Free Tier). Các gói PRO và tài khoản trong thời gian dùng thử 30 ngày hoàn toàn không có quảng cáo.</li>
+        </ul>
+        <p>Chúng tôi <strong>không bán, không cho thuê, không trao đổi</strong> bất kỳ dữ liệu cá nhân nào của bạn cho bất kỳ nhà môi giới dữ liệu hoặc bên thứ ba nào khác.</p>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">04.</span> Lưu Trữ Dữ Liệu & Quyền Xóa Dữ Liệu (Data Retention & Deletion)</h2>
+        <p>
+          Dữ liệu Device ID phục vụ kích hoạt bản quyền được lưu trữ bảo mật trên cơ sở dữ liệu máy chủ trong suốt vòng đời sử dụng ứng dụng của bạn.
+        </p>
+        <p>
+          Bạn có toàn quyền yêu cầu xóa bỏ hoàn toàn mã định danh thiết bị của mình khỏi hệ thống máy chủ bản quyền của chúng tôi bất cứ lúc nào bằng cách gửi email tới: <strong>khangkieutrong@gmail.com</strong>. Chúng tôi sẽ tiến hành xóa dữ liệu thiết bị trong vòng 48 giờ làm việc.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">05.</span> Quyền Riêng Tư Của Trẻ Em (Children's Privacy)</h2>
+        <p>
+          CamTester Pro là công cụ kỹ thuật dành cho kỹ thuật viên và chuyên viên hệ thống giám sát camera. Ứng dụng không hướng tới và không cố ý thu thập bất kỳ dữ liệu cá nhân nào từ trẻ em dưới 13 tuổi.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2><span class="num">06.</span> Thay Đổi Chính Sách</h2>
+        <p>
+          Chúng tôi có thể cập nhật Chính Sách Quyền Riêng Tư này theo thời gian để phù hợp với các quy định pháp luật và tính năng mới. Mọi cập nhật sẽ được công bố công khai tại trang này với ngày hiệu lực mới nhất.
+        </p>
+      </div>
+
+        <div class="contact-box">
+          <h3>📬 Thông Tin Bản Quyền & Liên Hệ</h3>
+          <p>Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc yêu cầu nào liên quan đến quyền sở hữu bản quyền, quyền riêng tư và an toàn dữ liệu, vui lòng liên hệ:</p>
+          <p>
+            <strong>Kiều Trọng Khang (VigorLabs)</strong><br>
+            Email: <a href="mailto:khangkieutrong@gmail.com">khangkieutrong@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div id="content-en" class="en-content">
+        <div class="doc-hero">
+          <div class="doc-badge">Security & Legal</div>
+          <h1>Privacy Policy</h1>
+          <div class="doc-meta">
+            <span>📅 Last Updated: October 3, 2026</span>
+            <span>🏢 Developer & Copyright: Kieu Trong Khang (VigorLabs)</span>
+            <span>📦 Package: com.vigorlabs.vigorcameratester</span>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">01.</span> Introduction</h2>
+          <p>
+            Welcome to <strong>CamTester Pro</strong>, an Android application engineered for discovering, inspecting, streaming, and diagnosing ONVIF and RTSP IP cameras. All copyrights and intellectual property rights are owned and developed by <strong>Kieu Trong Khang</strong> (VigorLabs).
+          </p>
+          <p>
+            We are committed to safeguarding your privacy. This Privacy Policy details how we handle information when you install and interact with CamTester Pro.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">02.</span> Information We Collect & Usage</h2>
+          
+          <p><strong>A. Device Identifiers:</strong></p>
+          <ul>
+            <li><strong>Data Collected:</strong> Cryptographically hashed hardware device identifier (Device ID), device model name, Android OS version, and application version.</li>
+            <li><strong>Purpose:</strong> Activating the 30-day trial period, verifying Pro license entitlements, and preventing fraudulent trial abuse.</li>
+            <li><strong>Transmission:</strong> Transmitted exclusively over secure encrypted <code>HTTPS (TLS 1.3)</code> connections to verify license status.</li>
+          </ul>
+
+          <p><strong>B. Camera Streams & Local Network Data (100% Local):</strong></p>
+          <div class="highlight-box green">
+            🔒 <strong>STRICT LOCAL NETWORK PRIVACY GUARANTEE:</strong><br>
+            All video streams (RTSP / H.264 / H.265), ONVIF discovery metadata, IP camera credentials, and network diagnostic results are <strong>processed 100% locally on your device and local subnet (Ethernet/Wi-Fi)</strong>. The application <strong>NEVER</strong> transmits, uploads, or stores camera footage or passwords on any external cloud server.
+          </div>
+
+          <p><strong>C. In-App Purchases (Google Play Billing):</strong></p>
+          <ul>
+            <li>All subscription and one-time Pro purchases are processed securely through <strong>Google Play In-App Billing</strong>.</li>
+            <li>We only receive an anonymous purchase token and order ID to verify license legitimacy via the Google Play Developer API. We never have access to your credit card or financial accounts.</li>
+          </ul>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">03.</span> Third-Party Services</h2>
+          <p>CamTester Pro integrates select third-party SDKs to deliver core functionality:</p>
+          <ul>
+            <li><strong>Google Play Services & Billing:</strong> For application distribution, automatic updates, and in-app purchase verification.</li>
+            <li><strong>Google AdMob:</strong> To serve banner/interstitial advertisements exclusively for users on the Free tier. Pro users and active 30-day trial users enjoy a 100% ad-free experience.</li>
+          </ul>
+          <p>We do not sell, rent, or trade your personal information to third parties.</p>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">04.</span> Data Retention & Deletion</h2>
+          <p>
+            Device identifiers used for license entitlement are stored securely in our licensing database for the active lifecycle of the device.
+          </p>
+          <p>
+            You have the right to request immediate deletion of your device records at any time by contacting us at: <strong>khangkieutrong@gmail.com</strong>. Deletion requests will be completed within 48 business hours.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">05.</span> Children's Privacy</h2>
+          <p>
+            CamTester Pro is a professional utility tool designed for CCTV technicians and network administrators. It is not intended for use by children under the age of 13, and we do not knowingly collect personal data from children.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2><span class="num">06.</span> Contact Us</h2>
+          <div class="contact-box">
+            <p>
+              <strong>Kieu Trong Khang (VigorLabs)</strong><br>
+              Email: <a href="mailto:khangkieutrong@gmail.com">khangkieutrong@gmail.com</a>
+            </p>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Kiều Trọng Khang (VigorLabs). All rights reserved. | CamTester Pro</p>
+  </footer>
+
+
+  <script>
+    function switchLang(lang) {
+      const viContent = document.getElementById('content-vi');
+      const enContent = document.getElementById('content-en');
+      const btnVi = document.getElementById('btn-vi');
+      const btnEn = document.getElementById('btn-en');
+
+      if (lang === 'en') {
+        viContent.style.display = 'none';
+        enContent.style.display = 'block';
+        btnVi.classList.remove('active');
+        btnEn.classList.add('active');
+        document.documentElement.lang = 'en';
+      } else {
+        viContent.style.display = 'block';
+        enContent.style.display = 'none';
+        btnVi.classList.add('active');
+        btnEn.classList.remove('active');
+        document.documentElement.lang = 'vi';
+      }
+    }
+
+    // Auto-detect browser language or query parameter (?lang=en)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'en') {
+      switchLang('en');
+    }
+  </script>
+</body>
+</html>
